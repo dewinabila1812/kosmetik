@@ -18,16 +18,16 @@ def item_based_recommender(product_name, data):
     return similar_products
 
 # Streamlit App
-st.title("Skincare Product Recommender")
+st.title("Sistem Rekomendasi Produk Skincare")
 
 # User input for User ID at the top
-user_id = st.number_input("Enter your User ID", min_value=1, step=1)
+user_id = st.number_input("Masukkan ID Pengguna", min_value=1, step=1)
 
 # User input for selecting a product
-product_name = st.selectbox("Select a product to get recommendations", merged_df['Nama'].unique())  # Adjust if needed
+product_name = st.selectbox("Pilih Produk", merged_df['Nama'].unique())  # Adjust if needed
 
 # Option to get recommendations
-if st.button('Get Recommendations'):
+if st.button('Rekomendasikan'):
     recommendations = item_based_recommender(product_name, merged_df)
     
     if recommendations is not None:
