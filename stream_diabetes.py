@@ -26,6 +26,9 @@ user_id = st.number_input("Masukkan ID Pengguna", min_value=1, step=1)
 # User input for selecting a product
 product_name = st.selectbox("Pilih Produk", merged_df['Nama'].unique())  # Adjust if needed
 
+# User input for selecting a jenis kulit
+skin_type = st.selectbox("Pilih Jenis Kulit", merged_df['Tipe Kulit'].unique())  # Adjust if needed
+
 # Option to get recommendations
 if st.button('Rekomendasikan'):
     recommendations = item_based_recommender(product_name, merged_df)
